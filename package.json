@@ -2,27 +2,32 @@
   "name": "md-generate",
   "version": "0.0.1",
   "description": "NPM Package which generate README.md based on package.json.",
+  "main": "src/index.js",
+  "bin": {
+    "md-generate": "src/index.js"
+  },
   "keywords": [
     "markdown",
+    "readme",
+    "template",
     "readme.md",
     "generator",
-    "generate"
+    "generate",
+    "cli"
   ],
   "author": "Jakub Soboczyński <jakub.soboczynski@icloud.com> (https://www.jakubsoboczynski.pl)",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/prettier --check '*.{js,json}'",
-    "lint:fix": "./node_modules/.bin/prettier --write '*.{js,json}'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/prettier --check '**/*.{js,json}'",
+    "lint:fix": "./node_modules/.bin/prettier --write '**/*.{js,json}'",
+    "prepare": "husky install",
+    "start": "node src/index.js"
   },
-  "bin": {
-    "md-generate": "index.js"
+  "lint-staged": {
+    "*.{js,json}": "prettier --write"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:fix"
-    }
+  "dependencies": {
+    "inquirer": "^8.2.0"
   },
   "devDependencies": {
     "husky": "^7.0.4",
