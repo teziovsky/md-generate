@@ -1,31 +1,26 @@
 #! /usr/bin/env node
 
-const fs = require("fs");
+const checkFileExist = require("./utils/fileExist");
+const getQuestions = require("./utils/questions");
 const inquirer = require("inquirer");
+
 const packageJsonPath = process.cwd() + "/package.json";
 
-fs.access(packageJsonPath, (err) => {
-  if (err) {
+async function init() {
+  const exist = checkFileExist(packageJsonPath);
+
+  if (exist) {
+    const packageJSON = await require(packageJsonPath);
+    const questions = await getQuestions(packageJSON);
+    const responses = await inquirer.prompt(questions);
+
+    console.log("responses: ", responses);
+  } else {
     console.log(
-      "package.json does not exist. Run command in root directory of your project!"
+      "The package.json does not exist in current directory. Run command in root directory of your project!"
     );
     return false;
   }
+}
 
-  const packageJSON = require(packageJsonPath);
-
-  inquirer
-    .prompt([
-      {
-        name: "name",
-        message: "Name of project",
-        type: "input",
-        default() {
-          return packageJSON && packageJSON.name;
-        },
-      },
-    ])
-    .then((config) => {
-      console.log("config: ", config);
-    });
-});
+init();
