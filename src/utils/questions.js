@@ -5,11 +5,14 @@ function getQuestions(packageJSON) {
       type: "input",
       message: "👨🏼‍💻 Name",
       default() {
-        return packageJSON.name;
+        return packageJSON?.name;
       },
       validate(answer) {
         if (answer.length === 0) {
           return console.log("Name is required!");
+        }
+        if (answer.length >= 214) {
+          return console.log("Name can't be longer than 214 characters!");
         }
         return true;
       },
@@ -19,7 +22,7 @@ function getQuestions(packageJSON) {
       type: "input",
       message: "🏷  Version",
       default() {
-        return packageJSON.version;
+        return packageJSON?.version;
       },
       validate(answer) {
         if (answer.length === 0) {
@@ -33,7 +36,7 @@ function getQuestions(packageJSON) {
       type: "input",
       message: "📝 Description",
       default() {
-        return packageJSON.description;
+        return packageJSON?.description;
       },
       validate(answer) {
         if (answer.length === 0) {
@@ -43,57 +46,35 @@ function getQuestions(packageJSON) {
       },
     },
     {
-      name: "author",
-      type: "input",
-      message: "🙎🏼‍ Author",
-      default() {
-        return packageJSON.author;
-      },
-      validate(answer) {
-        if (answer.length === 0) {
-          return console.log("Author is required.");
-        }
-        return true;
-      },
-    },
-    {
-      name: "license",
-      type: "input",
-      message: "🧾 License",
-      default() {
-        return packageJSON.license;
-      },
-    },
-    {
       name: "homepage",
       type: "input",
       message: "🏠 Homepage",
       default() {
-        return packageJSON.homepage;
+        return packageJSON?.homepage;
       },
     },
     {
-      name: "contributing",
+      name: "bugs_url",
       type: "input",
-      message: "License",
+      message: "🔗 Issues link",
       default() {
-        return packageJSON.license;
+        return packageJSON?.bugs?.url;
       },
     },
     {
-      name: "tests",
+      name: "bugs_email",
       type: "input",
-      message: "License",
+      message: "🔗 Issues e-mail",
       default() {
-        return packageJSON.license;
+        return packageJSON?.bugs?.email;
       },
     },
     {
       name: "license",
       type: "list",
-      message: "License",
+      message: "🧾 License",
       default() {
-        return packageJSON.license;
+        return packageJSON?.license;
       },
       choices: [
         "GNU AGPLv3",
@@ -105,6 +86,50 @@ function getQuestions(packageJSON) {
         "Boost Software License 1.0",
         "The Unlicense",
       ],
+    },
+    {
+      name: "author_name",
+      type: "input",
+      message: "🙎🏼‍ Author name",
+      default() {
+        return packageJSON?.author?.name;
+      },
+      validate(answer) {
+        if (answer.length === 0) {
+          return console.log("Author name is required.");
+        }
+        return true;
+      },
+    },
+    {
+      name: "author_email",
+      type: "input",
+      message: "✉️  Author e-mail",
+      default() {
+        return packageJSON?.author?.email;
+      },
+    },
+    {
+      name: "author_url",
+      type: "input",
+      message: "🔗 Author url",
+      default() {
+        return packageJSON?.author?.url;
+      },
+    },
+    {
+      name: "repository_url",
+      type: "input",
+      message: "🎖️  Git repository URL",
+      default() {
+        return packageJSON?.repository?.url;
+      },
+      validate(answer) {
+        if (answer.length === 0) {
+          return console.log("Git repository URL is required.");
+        }
+        return true;
+      },
     },
   ];
 }
