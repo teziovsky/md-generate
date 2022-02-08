@@ -1,0 +1,55 @@
+{
+  "name": "md-generate",
+  "version": "0.0.1",
+  "description": "NPM Package which generates README.md based on package.json. It also can overwrite package.json file with data from inputs.",
+  "homepage": "https://github.com/teziovsky/md-generate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:teziovsky/md-generate.git"
+  },
+  "engines": {
+    "node": ">=v14.0.0",
+    "npm": ">=v6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/teziovsky/md-generate/issues",
+    "email": "teziovsky@gmail.com"
+  },
+  "license": "MIT License",
+  "author": {
+    "name": "Jakub Soboczyński",
+    "email": "jakub.soboczynski@icloud.com",
+    "url": "https://www.jakubsoboczynski.pl"
+  },
+  "main": "src/index.js",
+  "bin": {
+    "md-generate": "src/index.js"
+  },
+  "keywords": [
+    "markdown",
+    "readme",
+    "template",
+    "readme.md",
+    "generator",
+    "generate",
+    "cli"
+  ],
+  "scripts": {
+    "lint": "./node_modules/.bin/prettier --check '**/*.{js,json}'",
+    "lint:fix": "./node_modules/.bin/prettier --write '**/*.{js,json}'",
+    "prepare": "husky install",
+    "start": "node src/index.js"
+  },
+  "lint-staged": {
+    "*.{js,json}": "prettier --write"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.2",
+    "prettier": "^2.5.1"
+  }
+}
