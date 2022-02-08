@@ -10,16 +10,16 @@ function generateMarkdown(responses, githubData) {
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/${
     githubData.username
-  }/${githubData.repository}) ${responses.license ? license : null} ${
-    responses.author_twitter ? twitter : null
+  }/${githubData.repository}) ${responses.license ? license : ""} ${
+    responses.author_twitter ? twitter : ""
   }
 
 > ${responses.description}
 
-## Demo
-[🏠 Link to demo here!](${responses.homepage})
+## Demo 👀
+#### [🏠 Link to demo here!](${responses.homepage})
 
-## Get started
+## Get started 🏁
 
 Clone the project and go to the project directory
 
@@ -39,23 +39,23 @@ Start the application!
   npm run start
 \`\`\`
 
-## Author
+## Author 🙎🏼‍
 
-[@${githubData.username}](https://www.github.com/${githubData.username})
+#### [@${githubData.username}](https://www.github.com/${githubData.username})
 
-## Contact
+## Contact ☎️
 
 If you have any suggestions, please [email me here](mailto:${
     responses.author_email
   })! 🔥
 
-## License
+## License 🧾
 
-[${responses.license}](${getLicenseUrl(responses.license)})
+#### [${responses.license}](${getLicenseUrl(responses.license)})
 
 ---
 
-README created with ❤️ by [md-generate]()`;
+README created with ❤️ by [md-generate](https://www.npmjs.com/package/md-generate)`;
 }
 
 module.exports = generateMarkdown;
