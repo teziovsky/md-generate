@@ -1,8 +1,8 @@
 {
   "name": "md-generate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "NPM Package which generates README.md based on package.json. It also can overwrite package.json file with data from inputs.",
-  "homepage": "https://github.com/teziovsky/md-generate#readme",
+  "homepage": "https://www.npmjs.com/package/md-generate",
   "repository": {
     "type": "git",
     "url": "git@github.com:teziovsky/md-generate.git"
@@ -26,13 +26,13 @@
     "md-generate": "src/index.js"
   },
   "keywords": [
+    "cli",
+    "generate",
+    "generator",
     "markdown",
     "readme",
-    "template",
     "readme.md",
-    "generator",
-    "generate",
-    "cli"
+    "template"
   ],
   "scripts": {
     "lint": "./node_modules/.bin/prettier --check '**/*.{js,json}'",

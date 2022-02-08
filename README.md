@@ -4,10 +4,10 @@
 
 > NPM Package which generates README.md based on package.json. It also can overwrite package.json file with data from inputs.
 
-## Demo
-[🏠 Link to demo here!](https://github.com/teziovsky/md-generate#readme)
+## Demo 👀
+#### [🏠 Link to demo here!](https://www.npmjs.com/package/md-generate)
 
-## Get started
+## Get started 🏁
 
 Clone the project and go to the project directory
 
@@ -27,18 +27,18 @@ Start the application!
   npm run start
 ```
 
-## Author
+## Author 🙎🏼‍
 
-[@teziovsky](https://www.github.com/teziovsky)
+#### [@teziovsky](https://www.github.com/teziovsky)
 
-## Contact
+## Contact ☎️
 
 If you have any suggestions, please [email me here](mailto:jakub.soboczynski@icloud.com)! 🔥
 
-## License
+## License 🧾
 
-[MIT License](https://choosealicense.com/licenses/mit/)
+#### [MIT License](https://choosealicense.com/licenses/mit/)
 
 ---
 
-README created with ❤️ by [md-generate]()
+README created with ❤️ by [md-generate](https://www.npmjs.com/package/md-generate)
