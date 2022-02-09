@@ -22,19 +22,19 @@ function generateMarkdown(responses, githubData) {
 Clone the project and go to the project directory
 
 \`\`\`bash
-  git clone ${responses.repository_url} && cd ${responses.name}
+git clone ${responses.repository_url} && cd ${responses.name}
 \`\`\`
 
 Install dependencies
 
 \`\`\`bash
-  npm install
+npm install
 \`\`\`
 
 Start the application!
 
 \`\`\`bash
-  ${responses.run_command}
+${responses.run_command}
 \`\`\`
 
 ## Author 🙎🏼‍
