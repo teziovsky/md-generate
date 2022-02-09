@@ -1,6 +1,6 @@
 {
   "name": "md-generate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI which generates README.md based on package.json and Git config. It also can overwrite package.json file with data from inputs.",
   "homepage": "https://www.npmjs.com/package/md-generate",
   "repository": {
