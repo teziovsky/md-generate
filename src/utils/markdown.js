@@ -1,18 +1,16 @@
 const { getLicenseUrl } = require("./utils");
 
 function generateMarkdown(responses, githubData) {
-  const license = `[![GitHub](https://img.shields.io/github/license/${
-    githubData.username
-  }/${githubData.repository})](${getLicenseUrl(responses.license)})`;
+  const license = `[![GitHub](https://img.shields.io/github/license/${githubData.username}/${
+    githubData.repository
+  })](${getLicenseUrl(responses.license)})`;
   const twitter = `[![Twitter Follow](https://img.shields.io/twitter/follow/${responses.author_twitter}?style=social)](https://www.twitter.com/${responses.author_twitter})`;
 
   return `# Hey it's ${responses.name}! 🖖🏼
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/${
-    githubData.username
-  }/${githubData.repository}) ${responses.license ? license : ""} ${
-    responses.author_twitter ? twitter : ""
-  }
+![GitHub package.json version](https://img.shields.io/github/package-json/v/${githubData.username}/${
+    githubData.repository
+  }) ${responses.license ? license : ""} ${responses.author_twitter ? twitter : ""}
 
 > ${responses.description}
 
@@ -45,9 +43,7 @@ Start the application!
 
 ## Contact ☎️
 
-If you have any suggestions, please [email me here](mailto:${
-    responses.author_email
-  })! 🔥
+If you have any suggestions, please [email me here](mailto:${responses.author_email})! 🔥
 
 ## License 🧾
 
