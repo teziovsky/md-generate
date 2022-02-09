@@ -79,7 +79,7 @@ function getQuestions(packageJSON, gitUrl) {
     {
       name: "node_version",
       type: "list",
-      message: "Minimum node.js version required",
+      message: "🔢 Minimum node.js version required",
       default() {
         return packageJSON?.engines?.node ? packageJSON.engines.node : ">=v14.0.0";
       },
@@ -88,11 +88,25 @@ function getQuestions(packageJSON, gitUrl) {
     {
       name: "npm_version",
       type: "list",
-      message: "Minimum npm version required",
+      message: "🔢 Minimum npm version required",
       default() {
         return packageJSON?.engines?.npm ? packageJSON.engines.npm : ">=v6.0.0";
       },
       choices: [">=v6.0.0", ">=v7.0.0", ">=v8.0.0"],
+    },
+    {
+      name: "run_command",
+      type: "input",
+      message: "🔥 NPM Run command",
+      default() {
+        return "npm run serve";
+      },
+      validate(answer) {
+        if (answer.length === 0) {
+          return console.log("NPM run command is required!");
+        }
+        return true;
+      },
     },
     {
       name: "bugs_url",
@@ -178,7 +192,7 @@ function getQuestions(packageJSON, gitUrl) {
     {
       name: "update_package_json",
       type: "list",
-      message: "Do you want to update your package.json?",
+      message: "✍️ Do you want to update your package.json?",
       default() {
         return "Yes";
       },

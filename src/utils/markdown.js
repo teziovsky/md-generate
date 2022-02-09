@@ -34,7 +34,7 @@ Install dependencies
 Start the application!
 
 \`\`\`bash
-  npm run start
+  ${responses.run_command}
 \`\`\`
 
 ## Author 🙎🏼‍
