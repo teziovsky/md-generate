@@ -192,7 +192,7 @@ function getQuestions(packageJSON, gitUrl) {
     {
       name: "update_package_json",
       type: "list",
-      message: "✍️ Do you want to update your package.json?",
+      message: "✍️  Do you want to update your package.json?",
       default() {
         return "Yes";
       },
