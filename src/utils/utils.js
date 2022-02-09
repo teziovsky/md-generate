@@ -43,7 +43,7 @@ function saveMarkdownFile(file, filename = "README") {
 }
 
 function saveJsonFile(file, filename = "package") {
-  fs.writeFile(filename + ".json", JSON.stringify(file), (err) => {
+  fs.writeFile(filename + ".json", JSON.stringify(file, null, 2), (err) => {
     if (err) {
       return console.log(err);
     }

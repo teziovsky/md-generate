@@ -15,9 +15,7 @@ function getQuestions(packageJSON, gitUrl) {
           return console.log("Project name is required!");
         }
         if (answer.length >= 214) {
-          return console.log(
-            "Project name can't be longer than 214 characters!"
-          );
+          return console.log("Project name can't be longer than 214 characters!");
         }
         return true;
       },
@@ -41,9 +39,7 @@ function getQuestions(packageJSON, gitUrl) {
       type: "input",
       message: "📝 Project description",
       default() {
-        return packageJSON?.description
-          ? packageJSON.description
-          : "Awesome project! 🎆";
+        return packageJSON?.description ? packageJSON.description : "Awesome project! 🎆";
       },
       validate(answer) {
         if (answer.length === 0) {
@@ -57,9 +53,7 @@ function getQuestions(packageJSON, gitUrl) {
       type: "input",
       message: "🏠 Project homepage",
       default() {
-        return packageJSON?.homepage
-          ? packageJSON.homepage
-          : `https://github.com/${username}/${repository}/#readme`;
+        return packageJSON?.homepage ? packageJSON.homepage : `https://github.com/${username}/${repository}/#readme`;
       },
       validate(answer) {
         if (answer.length === 0) {
@@ -87,9 +81,7 @@ function getQuestions(packageJSON, gitUrl) {
       type: "list",
       message: "Minimum node.js version required",
       default() {
-        return packageJSON?.engines?.node
-          ? packageJSON.engines.node
-          : ">=v14.0.0";
+        return packageJSON?.engines?.node ? packageJSON.engines.node : ">=v14.0.0";
       },
       choices: [">=v12.0.0", ">=v14.0.0", ">=v16.0.0", ">=v17.0.0"],
     },
@@ -107,9 +99,7 @@ function getQuestions(packageJSON, gitUrl) {
       type: "input",
       message: "🔗 Issues link",
       default() {
-        return packageJSON?.bugs?.url
-          ? packageJSON.bugs.url
-          : `https://github.com/${username}/${repository}/issues`;
+        return packageJSON?.bugs?.url ? packageJSON.bugs.url : `https://github.com/${username}/${repository}/issues`;
       },
       validate(answer) {
         if (answer.length === 0) {
