@@ -40,9 +40,9 @@
     "prepare": "husky install",
     "start": "node src/index.js",
     "postversion": "git push && git push --tags",
-    "deploy-patch": "npm version patch --force -m \"version %s\"",
-    "deploy-minor": "npm version minor --force -m \"version %s\"",
-    "deploy-major": "npm version major --force -m \"version %s\""
+    "deploy-patch": "npm version patch --force -m \"Update to version %s\"",
+    "deploy-minor": "npm version minor --force -m \"Update to version %s\"",
+    "deploy-major": "npm version major --force -m \"Update to version %s\""
   },
   "lint-staged": {
     "*.{js,json}": "prettier --write"
