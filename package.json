@@ -1,6 +1,6 @@
 {
   "name": "md-generate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "CLI which generates README.md based on package.json and Git config. It also can overwrite package.json file with data from inputs.",
   "homepage": "https://www.npmjs.com/package/md-generate",
   "repository": {
@@ -38,7 +38,11 @@
     "lint": "./node_modules/.bin/prettier --check '**/*.{js,json}'",
     "lint:fix": "./node_modules/.bin/prettier --write '**/*.{js,json}'",
     "prepare": "husky install",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "postversion": "git push && git push --tags",
+    "deploy-patch": "npm version patch --force -m \"version %s\"",
+    "deploy-minor": "npm version minor --force -m \"version %s\"",
+    "deploy-major": "npm version major --force -m \"version %s\""
   },
   "lint-staged": {
     "*.{js,json}": "prettier --write"
