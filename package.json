@@ -48,13 +48,13 @@
     "*.{js,json}": "prettier --write"
   },
   "dependencies": {
-    "inquirer": "^8.2.0",
+    "inquirer": "^8.2.1",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.2",
-    "prettier": "^2.5.1"
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.0"
   },
   "volta": {
     "node": "16.14.0",
