@@ -27,7 +27,7 @@
   "license": "MIT License",
   "author": {
     "name": "Jakub Soboczyński",
-    "email": "jakub.soboczynski@icloud.com",
+    "email": "kontakt@jakubsoboczynski.pl",
     "url": "https://www.jakubsoboczynski.pl"
   }
 }
